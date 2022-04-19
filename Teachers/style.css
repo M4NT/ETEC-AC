@@ -1,0 +1,415 @@
+/*------ Variables ------*/
+:root {
+  --base-shade-1: #a30006;
+  --white-shade-1: #0c0c0c;
+  --white-shade-2: #ffffff; /*fontes*/
+  --black-shade-1: #a30006; /*box e titulos*/
+  --black-shade-2: #0c0c0c;
+  --grad-color-1: #2f2f2f;
+  --grad-color-2: 21, 120, 255;
+
+  --base-font-size: 1.6rem;
+
+  --heading-font-size-1: 4rem;
+  --heading-font-size-2: 3.2rem;
+  --heading-font-size-3: 2rem;
+  --heading-font-size-4: 1.8rem;
+
+  --border-radius-1: 1rem;
+  --border-radius-2: 0.5rem;
+}
+/*------ Base Styles ------*/
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+*:not(i) {
+  font-family: "Poppins", sans-serif;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+/*------ Utility Classes ------*/
+
+section,
+footer {
+  padding: 9rem 5rem;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+}
+.column {
+  width: 100%;
+}
+.section-desc {
+  text-align: center;
+  margin: 2rem 0 6rem 0;
+}
+h1 {
+  font-size: var(--heading-font-size-1);
+  color: var(--black-shade-1);
+  margin-bottom: 2rem;
+  word-spacing: 1rem;
+  line-height: 1.6;
+}
+h2 {
+  font-size: var(--heading-font-size-2);
+  color: var(--black-shade-1);
+  font-weight: 700;
+  text-align: center;
+}
+h3 {
+  font-size: var(--heading-font-size-3);
+  color: var(--black-shade-1);
+  font-weight: 700;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+h4 {
+  font-size: var(--heading-font-size-4);
+  color: var(--black-shade-2);
+  margin: 1.5rem 0;
+}
+p,
+button {
+  font-size: var(--base-font-size);
+  color: var(--black-shade-2);
+  line-height: 1.8;
+  font-weight: 400;
+}
+.btn {
+  background-color: transparent;
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius-2);
+  border: none;
+  margin: 2rem 0;
+}
+.primary-btn { /* botão COMECE A APRENDER */
+  background-color: #a30006;
+  color: #ffffff;
+  
+}
+.secondary-btn { /* botão EXPLORE MAIS */
+  border: 0.3rem solid #a30006;
+  color: #a30006;
+  cursor: pointer;
+}
+
+/*------ Header ------*/
+header {
+  position: fixed;
+  width: 100%;
+  padding: 3rem 5rem;
+  z-index: 1000;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+nav a {
+  font-size: var(--heading-font-size-4);
+  text-decoration: none;
+}
+nav a#logo { /* cor do nome da etec alcides cestari */
+  color: #a30006;
+  font-weight: 700;
+}
+nav ul a { /* cor da fonte da nav bar */
+  color: #ffffff;
+}
+
+/*-- SideMenu --*/
+#ham-menu {
+  display: none;
+}
+nav ul.active {
+  left: 0;
+}
+/*-- Sticky Header --*/
+.sticky {
+  background-color: #ffffff; /* cor da fonte pré nav bar */
+  box-shadow: 0 2rem 1.5rem rgba(0, 0, 0, 0.05);
+}
+.sticky nav ul a,
+.sticky nav a#logo,
+.sticky #ham-menu {
+  color: #a30006;
+}
+/*-- Link Hover Effect --*/
+nav ul a:hover {
+  color: #ffffff;
+}
+.sticky nav ul a:hover {
+  color: #a30006;
+}
+/*------ Section: Hero ------*/
+section.hero {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  align-items: center;
+}
+#header-shape {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.hero-content p {
+  text-align: justify;
+  margin-right: 15px;
+}
+.hero-img img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0.5rem 2.4rem 0.6rem rgba(0, 0, 0, 0.06);
+}
+.btn-container {
+  display: flex;
+  gap: 3rem;
+}
+/*------ Section: Features ------*/
+.features .row {
+  align-items: stretch;
+}
+.features .column {
+  padding: 6rem 2rem;
+  border-radius: var(--border-radius-1);
+}
+.features .column p {
+  text-align: center;
+}
+.features h3 {
+  margin: 3rem 0;
+}
+.features i {
+  display: block;
+  height: 6rem;
+  width: 6rem;
+  margin: 0 auto;
+  font-size: 3.5rem;
+  background-color: #ffffff; /* cor do molde do icone */
+  color: #a30006; /* cor do icone */
+  padding: 1.3rem 0;
+  text-align: center;
+  border-radius: var(--border-radius-2);
+}
+.features .column:hover {
+  background-color: var(--base-shade-1);
+}
+.features .column:hover h3 { /* fonte de quando passa o mouse em cima */
+  color: #ffffff;
+}
+.features .column:hover p { 
+  color: var(--white-shade-2);
+}
+.features .column:hover i { /* icone interior quando passa o mouse em cima */
+  background-color: #a30006; /* quadrado em volta dos icones */
+  color: #ffffff;
+}
+/*------ Section: Courses ------*/
+.courses .row {
+  align-items: stretch;
+}
+.courses .column {
+  box-shadow: 0 0.5rem 2.4rem 0.6rem rgba(0, 0, 0, 0.06);
+  border-radius: var(--border-radius-1);
+  display: flex;
+  flex-direction: column;
+}
+.courses .column > *:not(img) {
+  padding: 0 2rem;
+}
+.courses .column img {
+  border-radius: var(--border-radius-1) var(--border-radius-1) 0 0;
+  width: 100%;
+}
+.courses .column p {
+  text-align: center;
+  flex-grow: 1;
+}
+.courses-btn {
+  display: flex;
+  justify-content: center;
+}
+.courses-btn .btn:hover {
+  color: var(--white-shade-2);
+  background-color: var(--base-shade-1);
+}
+/*------ Section: Testimonials ------*/
+.testimonial {
+  background-image: linear-gradient(
+      45deg,
+      rgba(var(--grad-color-1), 0.8),
+      rgba(var(--grad-color-2), 0.8)
+    ),
+    url(testimonial-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.testimonial h2,
+.testimonial .section-desc {
+  color: var(#ffffff);
+}
+.testimonial .row {
+  align-items: stretch;
+}
+.testimonial .column {
+  background-color: var(#ffffff);
+  padding: 4rem 3rem;
+  text-align: center;
+  border-radius: var(#818181);
+  display: flex;
+  flex-direction: column;
+}
+.testimonial-image {
+  height: 14rem;
+  width: 14rem;
+  margin: auto;
+  padding: 0.9rem;
+  background: linear-gradient(
+    var(--white-shade-1) 50%,
+    var(--base-shade-1) 50%
+  );
+  border-radius: 50%;
+}
+.testimonial-image img {
+  width: 100%;
+  border-radius: 50%;
+}
+.testimonial .column p {
+  margin: 4rem 0;
+  flex-grow: 1;
+}
+
+/*------ Section: Footer ------*/
+footer { /* cor do rodapé */
+  background-color: #f1f1f1;
+}
+footer h3 {
+  margin: 0;
+}
+footer h3,
+footer h4 { /* cor da fonte do rodapé */
+  color: #a30006;
+  text-align: center;
+}
+footer .row {
+  margin-bottom: 6rem;
+}
+.footer-about {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 2px solid #a30006; /* cor da linha que separa */
+}
+.social-links {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+}
+.social-links a { /* cor das redes sociais */
+  font-size: 3rem;
+  text-decoration: none;
+  color: #a30006;
+}
+footer p {
+  text-align: center;
+}
+
+/*------ Scroll Top Button ------*/
+#scroll-top {
+  position: fixed;
+  display: none;
+  place-items: center;
+  height: 5rem;
+  width: 5rem;
+  right: 3rem;
+  bottom: 3rem;
+  background-color: var(--base-shade-1);
+  color: #ffffff;
+  border: none;
+  outline: none;
+  font-size: var(--heading-font-size-3);
+  border-radius: var(--border-radius-2);
+  box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+/*------ Ensino Médio  Técnico ------*/
+
+#ensino-medio-tecnico {
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-bottom: -60px;
+}
+
+#ensino-medio-tecnico .titulo-ensino {
+  font-size: var(--heading-font-size-1);
+  color: #a30006;
+  text-align: center;
+}
+#ensino-medio-tecnico .titulo-curso .titulo-disciplina {
+  font-size: var(--heading-font-size-2);
+  color: #a30006;
+  text-align: left;
+  margin-top: 85px;
+}
+
+.titulo-curso .atua {
+  font-size: var(--heading-font-size-3);
+  color: #a30006;
+  font-weight: 700;
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+.curso .atua fas fa-briefcase {
+  margin-right: 5px;
+}
+
+/*------ Ensino Técnico ------*/
+
+#ensino-tecnico {
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+#ensino-tecnico .titulo-ensino {
+  font-size: var(--heading-font-size-1);
+  color: #a30006;
+  text-align: center;
+}
+#ensino-tecnico .titulo-curso .titulo-disciplina {
+  font-size: var(--heading-font-size-2);
+  color: #a30006;
+  text-align: left;
+  margin-top: 85px;
+}
+
+.titulo-curso .atua {
+  font-size: var(--heading-font-size-3);
+  color: #a30006;
+  font-weight: 700;
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+.curso .atua fas fa-briefcase {
+  margin-right: 5px;
+}
